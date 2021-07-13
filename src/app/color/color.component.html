@@ -4,15 +4,26 @@
     <p class="lead">Please choose color</p>
     <hr class="my-4">
     <div class="card-body">
-      <p class="card-body" style="width: 100%; height: 100px" [style.background-color]="getColorString()">{{ red + green + blue }}</p>
+      <!--      <p class="card-body" style="width: 100%; height: 100px" [style.background-color]="getColorString()">{{ red + green + blue }}</p>-->
+      <p class="card-body" style="width: 100%; height: 100px"
+         [ngStyle]="{'background-color': 'rgb('+red+','+ green+','+blue+')'}"></p>
     </div>
     <div class="card-footer row">
-      <label class="form-control-range col-4"><h2>Red: {{ red }}</h2> </label><input #element type="range"  min="0" max="255" value="100"
-             (change)="changeRed(element.value)">
-      <label class="form-control-range col-4"><h2>Green: {{ green }}</h2> </label><input #element1 type="range"  min="0" max="255" value="100"
-             (change)="changeGreen(element1.value)">
-      <label class="form-control-range col-4"><h2>Blue: {{ blue }}</h2> </label><input #element2 type="range"  min="0" max="255" value="100"
-             (change)="changeBlue(element2.value)">
+      <label class="form-control-range col-4"><h2>Red: {{ red }}</h2></label><input #element type="range" min="0"
+                                                                                    max="255" value="100"
+                                                                                    [(ngModel)]="red">
+      <label class="form-control-range col-4"><h2>Green: {{ green }}</h2></label><input #element1 type="range" min="0"
+                                                                                        max="255" value="100"
+                                                                                        [(ngModel)]="green">
+      <label class="form-control-range col-4"><h2>Blue: {{ blue }}</h2></label><input #element2 type="range" min="0"
+                                                                                      max="255" value="100"
+                                                                                      [(ngModel)]="blue">
+      <!--      <label class="form-control-range col-4"><h2>Red: {{ red }}</h2> </label><input #element type="range"  min="0" max="255" value="100"-->
+      <!--             (change)="changeRed(element.value)">-->
+      <!--      <label class="form-control-range col-4"><h2>Green: {{ green }}</h2> </label><input #element1 type="range"  min="0" max="255" value="100"-->
+      <!--             (change)="changeGreen(element1.value)">-->
+      <!--      <label class="form-control-range col-4"><h2>Blue: {{ blue }}</h2> </label><input #element2 type="range"  min="0" max="255" value="100"-->
+      <!--             (change)="changeBlue(element2.value)">-->
     </div>
   </div>
 </div>
